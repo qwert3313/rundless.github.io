@@ -122,6 +122,13 @@
                 white: 4657795257,
                 gray: 4657795256,
             };
+            const colorToImageMap = {
+                black: "img/mütze/black/knit-beanie-black-front-67633795021ac.jpg",
+                darkGreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
+                navy: "img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg",
+                white: "img/mütze/white/knit-beanie-white-front-67633795027fd.jpg",
+                gray: "img/gray/knit-beanie-gray-front-6763379502765.jpg",
+            };
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
             let currentSlideIndex = 0;
@@ -132,6 +139,7 @@
             colorSelect.addEventListener("change", (event) => {
                 const selectedColor = event.target.value;
                 addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
+                addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
 
 
                 // Alle Slideshows ausblenden
@@ -169,4 +177,5 @@
         });
     </script>
 </body>
+
 </html>
