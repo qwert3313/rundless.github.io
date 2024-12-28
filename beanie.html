@@ -75,10 +75,9 @@
 
             <!-- Slideshow: Gray -->
             <div class="slideshow" id="slideshow-gray" style="display: none;">
-
-                <img src="img/mütze/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Loading Error"
+                <img src="img/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View"
                     class="active">
-                <img src="img/mütze/gray/knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
+                <img src="img\gray\knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
@@ -95,7 +94,7 @@
             <!-- Color Selection -->
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
-                <option value="darkGreen">Dark Green</option>
+                <option value="darkgreen">Dark Green</option>
                 <option value="navy">Navy</option>
                 <option value="white">White</option>
                 <option value="gray">Gray</option>
@@ -118,17 +117,17 @@
             const addToCartButton = document.getElementById("orderBtn");
             const colorToIdMap = {
                 black: 4657795253,
-                darkGreen: 4657795255,
+                darkgreen: 4657795255,
                 navy: 4657795254,
                 white: 4657795257,
                 gray: 4657795256,
             };
             const colorToImageMap = {
                 black: "img/mütze/black/knit-beanie-black-front-67633795021ac.jpg",
-                darkGreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
+                darkgreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
                 navy: "img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg",
                 white: "img/mütze/white/knit-beanie-white-front-67633795027fd.jpg",
-                gray: "img/mütze/gray/knit-beanie-gray-front-6763379502765.jpg",
+                gray: "img/gray/knit-beanie-gray-front-6763379502765.jpg",
             };
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
@@ -141,7 +140,7 @@
                 const selectedColor = event.target.value;
                 addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
                 addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
-                addToCartButton.setAttribute("data-item-name","Embroidered Beanie | " + selectedColor);
+                addToCartButton.setAttribute("data-item-name", selectedColor);
 
 
                 // Alle Slideshows ausblenden
