@@ -105,7 +105,7 @@
                 data-item-price="26.00"
                 data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
                 data-item-image="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg"
-                data-item-name="Eco Tote Bag | Size" data-item-custom1-readonly="black"
+                data-item-name="Embroidered Beanie | Black" data-item-custom1-readonly="black"
                 data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
                 ADD TO CART
             </button>
@@ -140,6 +140,7 @@
                 const selectedColor = event.target.value;
                 addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
                 addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
+                addToCartButton.setAttribute("data-item-name", selectedColor);
 
 
                 // Alle Slideshows ausblenden
