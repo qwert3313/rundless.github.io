@@ -4,44 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Tote Bag</title>
+    <title>Embroidered Beanie</title>
     <link rel="stylesheet" href="items.css">
-    <script src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
-    <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
 </head>
 
 <body>
-    <button class="snipcart-checkout"
-        style="background-color: transparent; border: none; position: absolute; top: 20px; right: 50px; width: 5%; height: 5%; cursor: pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path
-                d="M351.9 329.506H206.81l-3.072-12.56H368.16l26.63-116.019-217.23-26.04-9.952-58.09h-50.4v21.946h31.894l35.233 191.246a32.927 32.927 0 1 0 36.363 21.462h100.244a32.825 32.825 0 1 0 30.957-21.945zM181.427 197.45l186.51 22.358-17.258 75.195H198.917z"
-                data-name="Shopping Cart" />
-        </svg>
-        <nobr><span class="snipcart-total-price"></span>
-            (<span class="snipcart-items-count"></span>)
-    </button></nobr>
-
     <div class="container">
         <!-- Linke Spalte: Slideshow -->
         <div class="image-container">
-            <h1>Eco Tote Bag</h1>
+            <h1>Embroidered Beanie</h1>
+
+            <!-- Slideshow: Black -->
             <div class="slideshow" id="slideshow-black" style="display: block;">
-                <img src="img/bag/black/eco-tote-bag-black-front-6763ff172415c.jpg" alt="Black Product 1"
+                <img src="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg" alt="Black Beanie - Front View"
                     class="active">
-                <img src="img/bag/black/eco-tote-bag-black-product-details-6763ff17240cf.jpg" alt="Black Product 2">
-                <img src="img/bag/black/eco-tote-bag-black-front-6763ff1723da8.jpg" alt="Black Product 3">
+                <img src="img/mütze/black/knit-beanie-black-front-6763379502582.jpg" alt="Black Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
                 </div>
             </div>
-            <div class="slideshow" id="slideshow-oyster" style="display: none;">
-                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff172434c.jpg" alt="Oyster Product 1"
+
+            <!-- Slideshow: Dark Green -->
+            <div class="slideshow" id="slideshow-darkGreen" style="display: none;">
+                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg"
+                    alt="Dark Green Beanie - Front View" class="active">
+                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026fe.jpg"
+                    alt="Dark Green Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: Navy -->
+            <div class="slideshow" id="slideshow-navy" style="display: none;">
+                <img src="img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg" alt="Navy Beanie - Front View"
                     class="active">
-                <img src="img\bag\oyster\eco-tote-bag-oyster-product-details-6763ff17242ae.jpg" alt="Black Product 2">
-                <img src="img\bag\oyster\eco-tote-bag-oyster-front-6763ff17241da.jpg" alt="Oyster Product 3">
+                <img src="img/mütze/navy/knit-beanie-navy-front-676337950265d.jpg" alt="Navy Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: White -->
+            <div class="slideshow" id="slideshow-white" style="display: none;">
+                <img src="img/mütze/white/knit-beanie-white-front-67633795027fd.jpg" alt="White Beanie - Front View"
+                    class="active">
+                <img src="img/mütze/white/knit-beanie-white-front-6763379502864.jpg" alt="White Beanie - Another View">
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
+
+            <!-- Slideshow: Gray -->
+            <div class="slideshow" id="slideshow-gray" style="display: none;">
+                <img src="img/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View"
+                    class="active">
+                <img src="img\gray\knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
@@ -55,28 +77,32 @@
                 distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
                 porro assumenda velit ullam.</p>
 
+            <!-- Color Selection -->
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
-                <option value="oyster">Oyster</option>
+                <option value="darkGreen">Dark Green</option>
+                <option value="navy">Navy</option>
+                <option value="white">White</option>
+                <option value="gray">Gray</option>
             </select>
-            <p><strong style="font-size: larger;"><s>26€ </s>19,50€</strong></p>
 
-            <form id="code-form">
+            <p><strong style="font-size: larger;"><s>22€ </s>16,50€</strong></p>
+            <form action="http://localhost:3000/check1" method="post">
+                <!-- Der View/Hide-Button verwendet type="button", um das Absenden zu verhindern -->
                 <button id="button" type="button" onclick="changeType()" class="button">View</button>
+
+                <!-- Das Eingabefeld für den Code -->
                 <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
-                <button type="submit" class="button">Check code</button>
+
+                <!-- Der Submit-Button sendet das Formular an den Server -->
+                <button class="button" type="submit">CHECK CODE AND ADD TO CART</button>
             </form>
             <button id="orderBtn" style="display: none; margin-top: 20px;" class="snipcart-add-item button"
-            data-item-id="4657823471"
-            data-item-price="19.50"
-                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
-                data-item-image="img/bag/black/eco-tote-bag-black-front-6763ff172415c.jpg"
-                data-item-name="Eco Tote Bag | Size" data-item-custom1-readonly="black"
-                data-item-url = "https://qwert3313.github.io/test2.github.io/#/">
+                data-item-id="" data-item-price="16.50"
+                data-item-description="Stylish and comfortable embroidered beanie, available in multiple colors and sizes."
+                data-item-image="" data-item-name="">
                 ADD TO CART
             </button>
-            <!--add to other products: data-item-custom2-readonly="M" and to data-item-name color in the name-->
-
         </div>
     </div>
 
@@ -114,15 +140,13 @@
                 alert("Code could not be found on server.");
             }
         });
-
         document.addEventListener("DOMContentLoaded", () => {
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
             let currentSlideIndex = 0;
 
             // Standard: Schwarzes Produkt anzeigen
-            const defaultSlideshow = document.getElementById("slideshow-black");
-            defaultSlideshow.style.display = "block";
+            document.getElementById("slideshow-black").style.display = "block";
 
             colorSelect.addEventListener("change", (event) => {
                 const selectedColor = event.target.value;
@@ -160,44 +184,6 @@
                 currentSlideIndex = 0;
             }
         });
-        function updateButtonAttributes() {
-    const colorSelect = document.getElementById("color-select");
-    const sizeSelect = document.getElementById("size-select");
-
-    const selectedColor = colorSelect.value;
-    const selectedSize = sizeSelect.value;
-
-    const variantMapping = {
-        "eco-tote-bag-black": 4657823471,
-        "eco-tote-bag-oyster": 4657823471,
-    };
-
-    const variantId = variantMapping[`${selectedColor}-${selectedSize}`];
-    const defaultImage = "img/bag/black/eco-tote-bag-black-front-6763ff172415c.jpg";
-    const selectedImage =
-        selectedColor === "oyster"
-            ? "img/bag/oyster/eco-tote-bag-oyster-front-6763ff172434c.jpg"
-            : defaultImage;
-
-    const button = document.getElementById("orderBtn");
-
-    if (variantId) {
-        button.setAttribute("data-item-id", variantId);
-        button.setAttribute("data-item-image", selectedImage);
-        button.setAttribute("data-item-name", `Eco Tote Bag | ${selectedColor} | ${selectedSize}`);
-        button.setAttribute("data-item-custom1-value", selectedColor); // Farbe
-        button.setAttribute("data-item-custom2-value", selectedSize);  // Größe
-    }
-}
-
-// Event Listener hinzufügen
-document.getElementById("color-select").addEventListener("change", updateButtonAttributes);
-//document.getElementById("size-select").addEventListener("change", updateButtonAttributes);
-
-// Initiale Attributaktualisierung
-updateButtonAttributes();
-
-
         function changeType() {
             var inputField = document.getElementById("inputField");
             var button = document.getElementById("button");
@@ -211,6 +197,52 @@ updateButtonAttributes();
                 button.textContent = "View";
             }
         }
+        function updateButtonAttributes() {
+            const colorSelect = document.getElementById("color-select");
+            const orderBtn = document.getElementById("orderBtn");
+
+            const selectedColor = colorSelect.value;
+
+            // Variant Mapping
+            const variantMapping = {
+                "black": 4657795253,
+                "darkGreen": 4657795255,
+                "navy": 323459,
+                "white": 423456,
+                "gray": 523456,
+            };
+
+            const variantId = variantMapping[`${selectedColor}`];
+
+            // Bilder für Farben
+            const imageMapping = {
+                "black": "img/mütze/black/knit-beanie-black-front-67633795021ac.jpg",
+                "darkGreen": "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
+                "navy": "img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg",
+                "white": "img/mütze/white/knit-beanie-white-front-67633795027fd.jpg",
+                "gray": "img/mütze/gray/knit-beanie-gray-front-6763379502765.jpg",
+            };
+
+            const selectedImage = imageMapping[selectedColor];
+
+            if (variantId) {
+                orderBtn.setAttribute("data-item-id", variantId);
+                orderBtn.setAttribute("data-item-image", selectedImage);
+                orderBtn.setAttribute("data-item-name", `Embroidered Beanie | ${selectedColor} | ${selectedSize}`);
+                orderBtn.setAttribute("data-item-custom1-value", selectedColor); // Farbe
+                orderBtn.setAttribute("data-item-custom2-value", selectedSize);  // Größe
+                orderBtn.style.display = "block";
+            } else {
+                orderBtn.style.display = "none";
+            }
+        }
+
+        // Event Listener hinzufügen
+        document.getElementById("color-select").addEventListener("change", updateButtonAttributes);
+        document.getElementById("size-select").addEventListener("change", updateButtonAttributes);
+
+        // Initiale Attributaktualisierung
+        updateButtonAttributes();
     </script>
 </body>
 
