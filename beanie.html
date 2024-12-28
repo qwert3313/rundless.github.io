@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embroidered Beanie</title>
     <link rel="stylesheet" href="items.css">
+    <script src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
+    <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
 </head>
 
 <body>
+    <button class="snipcart-checkout"
+        style="background-color: transparent; border: none; position: absolute; top: 20px; right: 50px; width: 5%; height: 5%; cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M351.9 329.506H206.81l-3.072-12.56H368.16l26.63-116.019-217.23-26.04-9.952-58.09h-50.4v21.946h31.894l35.233 191.246a32.927 32.927 0 1 0 36.363 21.462h100.244a32.825 32.825 0 1 0 30.957-21.945zM181.427 197.45l186.51 22.358-17.258 75.195H198.917z"
+                data-name="Shopping Cart" />
+        </svg>
+        <nobr><span class="snipcart-total-price"></span>
+            (<span class="snipcart-items-count"></span>)
+    </button></nobr>
+
     <div class="container">
         <!-- Linke Spalte: Slideshow -->
         <div class="image-container">
@@ -16,7 +30,8 @@
 
             <!-- Slideshow: Black -->
             <div class="slideshow" id="slideshow-black" style="display: block;">
-                <img src="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg" alt="Black Beanie - Front View" class="active">
+                <img src="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg" alt="Black Beanie - Front View"
+                    class="active">
                 <img src="img/mütze/black/knit-beanie-black-front-6763379502582.jpg" alt="Black Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
@@ -26,8 +41,10 @@
 
             <!-- Slideshow: Dark Green -->
             <div class="slideshow" id="slideshow-darkGreen" style="display: none;">
-                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg" alt="Dark Green Beanie - Front View" class="active">
-                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026fe.jpg" alt="Dark Green Beanie - Another View">
+                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg"
+                    alt="Dark Green Beanie - Front View" class="active">
+                <img src="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026fe.jpg"
+                    alt="Dark Green Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
@@ -36,7 +53,8 @@
 
             <!-- Slideshow: Navy -->
             <div class="slideshow" id="slideshow-navy" style="display: none;">
-                <img src="img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg" alt="Navy Beanie - Front View" class="active">
+                <img src="img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg" alt="Navy Beanie - Front View"
+                    class="active">
                 <img src="img/mütze/navy/knit-beanie-navy-front-676337950265d.jpg" alt="Navy Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
@@ -46,7 +64,8 @@
 
             <!-- Slideshow: White -->
             <div class="slideshow" id="slideshow-white" style="display: none;">
-                <img src="img/mütze/white/knit-beanie-white-front-67633795027fd.jpg" alt="White Beanie - Front View" class="active">
+                <img src="img/mütze/white/knit-beanie-white-front-67633795027fd.jpg" alt="White Beanie - Front View"
+                    class="active">
                 <img src="img/mütze/white/knit-beanie-white-front-6763379502864.jpg" alt="White Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
@@ -56,7 +75,8 @@
 
             <!-- Slideshow: Gray -->
             <div class="slideshow" id="slideshow-gray" style="display: none;">
-                <img src="img/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View" class="active">
+                <img src="img/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View"
+                    class="active">
                 <img src="img\gray\knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
@@ -71,15 +91,6 @@
                 distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
                 porro assumenda velit ullam.</p>
 
-            <!-- Size Selection -->
-            <select name="size" id="size-select">
-                <option value="#" disabled selected>Size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
-
             <!-- Color Selection -->
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
@@ -90,12 +101,27 @@
             </select>
 
             <p><strong style="font-size: larger;">22€</strong></p>
-            <button class="button">ADD TO CART</button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657823471"
+                data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/bag/black/eco-tote-bag-black-front-6763ff172415c.jpg"
+                data-item-name="Eco Tote Bag | Size" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
+                ADD TO CART
+            </button>
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButton = document.getElementById("orderBtn");
+            const colorToIdMap = {
+                black: 4657795253,
+                darkGreen: 4657795255,
+                navy: 4657795254,
+                white: 4657795257,
+                gray: 4657795256,
+            };
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
             let currentSlideIndex = 0;
@@ -105,6 +131,8 @@
 
             colorSelect.addEventListener("change", (event) => {
                 const selectedColor = event.target.value;
+                addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
+
 
                 // Alle Slideshows ausblenden
                 slideshows.forEach((slideshow) => {
@@ -141,5 +169,4 @@
         });
     </script>
 </body>
-
 </html>
