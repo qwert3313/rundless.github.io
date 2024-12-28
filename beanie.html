@@ -94,7 +94,7 @@
             <!-- Color Selection -->
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
-                <option value="darkgreen">Dark Green</option>
+                <option value="darkGreen">Dark Green</option>
                 <option value="navy">Navy</option>
                 <option value="white">White</option>
                 <option value="gray">Gray</option>
@@ -117,14 +117,14 @@
             const addToCartButton = document.getElementById("orderBtn");
             const colorToIdMap = {
                 black: 4657795253,
-                darkgreen: 4657795255,
+                darkGreen: 4657795255,
                 navy: 4657795254,
                 white: 4657795257,
                 gray: 4657795256,
             };
             const colorToImageMap = {
                 black: "img/mütze/black/knit-beanie-black-front-67633795021ac.jpg",
-                darkgreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
+                darkGreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
                 navy: "img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg",
                 white: "img/mütze/white/knit-beanie-white-front-67633795027fd.jpg",
                 gray: "img/gray/knit-beanie-gray-front-6763379502765.jpg",
@@ -140,7 +140,7 @@
                 const selectedColor = event.target.value;
                 addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
                 addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
-                addToCartButton.setAttribute("data-item-name", selectedColor);
+                addToCartButton.setAttribute("data-item-name", `Embroidered Beanie | ${selectedColor}`);
 
 
                 // Alle Slideshows ausblenden
