@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeButton = Array.from(buttons).find(
             (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
         );
-        console.log(selectedColor + selectedSize + "=" + colorToIdMap[selectedColor + selectedSize);
+        console.log(selectedColor + selectedSize + "=" + colorToIdMap[selectedColor + selectedSize]);
         if (activeButton) {
             activeButton.style.display = "block";
         }
