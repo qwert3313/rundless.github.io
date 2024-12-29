@@ -516,10 +516,10 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const colorSelect = document.getElementById("color-select");
-                const sizeSelect = document.getElementById("size-select");
-                const buttons = document.querySelectorAll(".snipcart-add-item");
-                const slideshows = document.querySelectorAll(".slideshow");
+            const addToCartButton = document.getElementById("orderBtn");
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
 
                 const colorToIdMap = {
                     blackS: 4657755189,
@@ -564,48 +564,48 @@
                     whiteXL: 4657755282,
                 };
 
-                let selectedColor = colorSelect.value;
-                let selectedSize = sizeSelect.value;
+let currentSlideIndex = 0;
 
-                // Standardanzeige
-                function initializeButtonsAndSlides() {
-                    const activeButton = Array.from(buttons).find(
-                        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
-                    );
-                    console.log(selectedColor + selectedSize + "=" + colorToIdMap[selectedColor + selectedSize]);
-                    if (activeButton) {
-                        activeButton.style.display = "block";
-                    }
+            // Standard: Schwarzes Produkt anzeigen
+            const defaultSlideshow = document.getElementById("slideshow-black");
+            if (defaultSlideshow) {
+                defaultSlideshow.style.display = "block";
+            }
 
-                    slideshows.forEach((slideshow) => slideshow.style.display = "none");
-                    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                    if (activeSlideshow) {
-                        activeSlideshow.style.display = "block";
-                        resetSlides(activeSlideshow);
-                    }
-                }
+            // Event-Listener für Farbauswahl
+colorSelect.addEventListener("change", (event) => {
+    selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
-                // Event-Listener
-                colorSelect.addEventListener("change", (event) => {
-                    selectedColor = event.target.value;
-                    buttons.forEach((button) => button.style.display = "none");
-                    initializeButtonsAndSlides();
-                });
+    // Alle Buttons ausblenden
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
 
-                sizeSelect.addEventListener("change", (event) => {
-                    selectedSize = event.target.value;
-                    buttons.forEach((button) => button.style.display = "none");
-                    initializeButtonsAndSlides();
-                });
+    // Button mit passendem data-item-id anzeigen
+    const activeButton = Array.from(buttons).find(
+        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+    );
+    if (activeButton) {
+        activeButton.style.display = "block";
+    }
 
-                // Zurücksetzen der Slides
-                function resetSlides(slideshow) {
-                    const slides = slideshow.querySelectorAll("img");
-                    slides.forEach((slide) => slide.classList.remove("active"));
-                    slides[0].classList.add("active");
-                }
-                            window.changeSlide = (direction) => {
-                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+    // Alle Slideshows ausblenden
+    slideshows.forEach((slideshow) => {
+        slideshow.style.display = "none";
+    });
+
+    // Passende Slideshow anzeigen
+    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+    if (activeSlideshow) {
+        activeSlideshow.style.display = "block";
+        resetSlides(activeSlideshow); // Slides zurücksetzen
+    }
+});
+
+            // Funktion zum Wechseln der Bilder
+            window.changeSlide = (direction) => {
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
                 if (!activeSlideshow) return;
 
                 const slides = activeSlideshow.querySelectorAll("img");
@@ -615,10 +615,14 @@
                 slides[currentSlideIndex].classList.add("active");
             };
 
-                // Initialisierung beim Laden
-                initializeButtonsAndSlides();
-            });
-
+            // Zurücksetzen der Slides
+            function resetSlides(slideshow) {
+                const slides = slideshow.querySelectorAll("img");
+                slides.forEach((slide) => slide.classList.remove("active"));
+                slides[0].classList.add("active"); // Setze erstes Bild aktiv
+                currentSlideIndex = 0;
+            }
+        });
         </script>
 </body>
 
