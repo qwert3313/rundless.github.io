@@ -212,35 +212,35 @@
             }
 
             // Event-Listener für Farbauswahl
-            colorSelect.addEventListener("change", (event) => {
-                const selectedColor = event.target.value;
+colorSelect.addEventListener("change", (event) => {
+    selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
-                // Alle Buttons ausblenden
-                const buttons = document.querySelectorAll(".snipcart-add-item");
-                buttons.forEach((button) => {
-                    button.style.display = "none";
-                });
+    // Alle Buttons ausblenden
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
 
-                // Button mit passendem data-item-id anzeigen
-                const activeButton = Array.from(buttons).find(
-                    (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
-                );
-                if (activeButton) {
-                    activeButton.style.display = "block";
-                }
+    // Button mit passendem data-item-id anzeigen
+    const activeButton = Array.from(buttons).find(
+        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+    );
+    if (activeButton) {
+        activeButton.style.display = "block";
+    }
 
-                // Alle Slideshows ausblenden
-                slideshows.forEach((slideshow) => {
-                    slideshow.style.display = "none";
-                });
+    // Alle Slideshows ausblenden
+    slideshows.forEach((slideshow) => {
+        slideshow.style.display = "none";
+    });
 
-                // Passende Slideshow anzeigen
-                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                if (activeSlideshow) {
-                    activeSlideshow.style.display = "block";
-                    resetSlides(activeSlideshow);
-                }
-            });
+    // Passende Slideshow anzeigen
+    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+    if (activeSlideshow) {
+        activeSlideshow.style.display = "block";
+        resetSlides(activeSlideshow); // Slides zurücksetzen
+    }
+});
 
             // Funktion zum Wechseln der Bilder
             window.changeSlide = (direction) => {
