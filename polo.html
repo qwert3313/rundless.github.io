@@ -229,6 +229,16 @@ document.addEventListener("DOMContentLoaded", () => {
         slides.forEach((slide) => slide.classList.remove("active"));
         slides[0].classList.add("active");
     }
+                window.changeSlide = (direction) => {
+                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                if (!activeSlideshow) return;
+
+                const slides = activeSlideshow.querySelectorAll("img");
+                slides[currentSlideIndex].classList.remove("active");
+
+                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+                slides[currentSlideIndex].classList.add("active");
+            };
 
     // Initialisierung beim Laden
     initializeButtonsAndSlides();
