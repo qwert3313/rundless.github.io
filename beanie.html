@@ -75,9 +75,9 @@
 
             <!-- Slideshow: Gray -->
             <div class="slideshow" id="slideshow-gray" style="display: none;">
-                <img src="img/mütze/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View"
+                <img src="img/gray/knit-beanie-gray-front-6763379502765.jpg" alt="Gray Beanie - Front View"
                     class="active">
-                <img src="img/mütze/gray/knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
+                <img src="img\gray\knit-beanie-gray-front-67633795027b2.jpg" alt="Gray Beanie - Another View">
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
@@ -101,11 +101,43 @@
             </select>
 
             <p><strong style="font-size: larger;">22€</strong></p>
-            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657823471"
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657795253"
                 data-item-price="26.00"
                 data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
                 data-item-image="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg"
-                data-item-name="Embroidered Beanie | black" data-item-custom1-readonly="black"
+                data-item-name="Embroidered Beanie | Black" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
+                ADD TO CART
+            </button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657795255"
+                data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg"
+                data-item-name="Embroidered Beanie | Dark Green" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
+                ADD TO CART
+            </button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657795254"
+                data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg"
+                data-item-name="Embroidered Beanie | Navy" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
+                ADD TO CART
+            </button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657795257"
+                data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/mütze/white/knit-beanie-white-front-67633795027fd.jpg"
+                data-item-name="Embroidered Beanie | White" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
+                ADD TO CART
+            </button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657795256"
+                data-item-price="26.00"
+                data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
+                data-item-image="img/gray/knit-beanie-gray-front-6763379502765.jpg"
+                data-item-name="Embroidered Beanie | Gray" data-item-custom1-readonly="black"
                 data-item-url="https://qwert3313.github.io/rundless.github.io/beanie.html">
                 ADD TO CART
             </button>
@@ -113,8 +145,11 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+                document.addEventListener("DOMContentLoaded", () => {
             const addToCartButton = document.getElementById("orderBtn");
+            const colorSelect = document.getElementById("color-select");
+            const slideshows = document.querySelectorAll(".slideshow");
+            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
             const colorToIdMap = {
                 black: 4657795253,
                 darkGreen: 4657795255,
@@ -127,38 +162,50 @@
                 darkGreen: "img/mütze/darkGreen/knit-beanie-dark-green-front-67633795026ad.jpg",
                 navy: "img/mütze/navy/knit-beanie-navy-front-6763379502605.jpg",
                 white: "img/mütze/white/knit-beanie-white-front-67633795027fd.jpg",
-                gray: "img/mütze/gray/knit-beanie-gray-front-6763379502765.jpg",
+                gray: "img/gray/knit-beanie-gray-front-6763379502765.jpg",
             };
-            const colorSelect = document.getElementById("color-select");
-            const slideshows = document.querySelectorAll(".slideshow");
             let currentSlideIndex = 0;
 
             // Standard: Schwarzes Produkt anzeigen
-            document.getElementById("slideshow-black").style.display = "block";
+            const defaultSlideshow = document.getElementById("slideshow-black");
+            if (defaultSlideshow) {
+                defaultSlideshow.style.display = "block";
+            }
 
-            colorSelect.addEventListener("change", (event) => {
-                const selectedColor = event.target.value;
-                addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
-                addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
-                addToCartButton.setAttribute("data-item-name", `Embroidered Beanie | ${selectedColor}`);
+            // Event-Listener für Farbauswahl
+colorSelect.addEventListener("change", (event) => {
+    selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
+    // Alle Buttons ausblenden
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
 
-                // Alle Slideshows ausblenden
-                slideshows.forEach((slideshow) => {
-                    slideshow.style.display = "none";
-                });
+    // Button mit passendem data-item-id anzeigen
+    const activeButton = Array.from(buttons).find(
+        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+    );
+    if (activeButton) {
+        activeButton.style.display = "block";
+    }
 
-                // Passende Slideshow anzeigen
-                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                if (activeSlideshow) {
-                    activeSlideshow.style.display = "block";
-                    resetSlides(activeSlideshow);
-                }
-            });
+    // Alle Slideshows ausblenden
+    slideshows.forEach((slideshow) => {
+        slideshow.style.display = "none";
+    });
+
+    // Passende Slideshow anzeigen
+    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+    if (activeSlideshow) {
+        activeSlideshow.style.display = "block";
+        resetSlides(activeSlideshow); // Slides zurücksetzen
+    }
+});
 
             // Funktion zum Wechseln der Bilder
             window.changeSlide = (direction) => {
-                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
                 if (!activeSlideshow) return;
 
                 const slides = activeSlideshow.querySelectorAll("img");
@@ -174,6 +221,32 @@
                 slides.forEach((slide) => slide.classList.remove("active"));
                 slides[0].classList.add("active"); // Setze erstes Bild aktiv
                 currentSlideIndex = 0;
+            }
+
+            // Snipcart Event Listener hinzufügen
+            document.addEventListener("snipcart.ready", () => {
+                Snipcart.events.on("item.added", (item) => {
+                    updateCartItemImage(item);
+                });
+
+                Snipcart.events.on("item.updated", (item) => {
+                    updateCartItemImage(item);
+                });
+            });
+
+            // Update des Warenkorbbildes basierend auf der Farbe
+            function updateCartItemImage(item) {
+                const color = item.customFields?.Color;
+                const newImageUrl = colorToImageMap[color];
+
+                if (newImageUrl) {
+                    const cartItem = document.querySelector(`[data-item-id="${item.id}"]`);
+                    const imageElement = cartItem?.querySelector(".snipcart-item-line__image");
+
+                    if (imageElement) {
+                        imageElement.src = newImageUrl;
+                    }
+                }
             }
         });
     </script>
