@@ -234,7 +234,7 @@
                 });
 
                 // Passende Slideshow anzeigen
-                const activeSlideshow = document.getElementById(`slideshow-${colorToIdMap[selectedColor]}`);
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
                 if (activeSlideshow) {
                     activeSlideshow.style.display = "block";
                     resetSlides(activeSlideshow);
