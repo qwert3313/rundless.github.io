@@ -238,7 +238,7 @@
         });
 
         // Passenden Button anzeigen
-        const activeButton = document.getElementById(`button-${selectedColor}`);
+        const activeButton = document.getElementById(`button-${colorToIdMap[selectedColor]}`);
         if (activeButton) {
             activeButton.style.display = "block";
         }
