@@ -109,13 +109,6 @@
                 distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
                 porro
                 assumenda velit ullam.</p>
-            <select name="size" id="size-select">
-                <option value="#" disabled selected>Size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-            </select>
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
                 <option value="blackWhite">Black/White</option>
@@ -126,12 +119,35 @@
             </select>
 
             <p><strong style="font-size: larger;">29€</strong></p>
-            <button class="button">ADD TO CART</button>
+            <button id="orderBtn" style="margin-top: 20px;" class="snipcart-add-item button" data-item-id="4657823471"
+                data-item-price="29.00"
+                data-item-description="Size-adjustable, air-permeable high-quality cap"
+                data-item-image="img/mütze/black/knit-beanie-black-front-67633795021ac.jpg"
+                data-item-name="Trucker Cap | black" data-item-custom1-readonly="black"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/cap.html">
+                ADD TO CART
+            </button>        
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButton = document.getElementById("orderBtn");
+            const colorToIdMap = {
+                black: 4657795253,
+                darkGreen: 4657795255,
+                navy: 4657795254,
+                white: 4657795257,
+                gray: 4657795256,
+            };
+            const colorToImageMap = {
+                black: "img/cap/black/5-panel-trucker-cap-black-left-front-6763388c8a60e.jpg",
+                blackWhite: "img/cap/blackwhite/5-panel-trucker-cap-black-white-left-front-6763388c8a328.jpg",
+                whiteBlack: "img/cap/navywhite/5-panel-trucker-cap-navy-white-left-front-6763388c8ad3c.jpg",
+                navyWhite: "img/cap/navywhite/5-panel-trucker-cap-navy-white-left-front-6763388c8ad3c.jpg",
+                white: "img/cap/white/5-panel-trucker-cap-white-left-front-6763388c8b463.jpg",
+                navy: "img/cap/navy/5-panel-trucker-cap-navy-left-front-6763388c8a9a1.jpg"
+            };
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
             let currentSlideIndex = 0;
@@ -142,6 +158,9 @@
 
             colorSelect.addEventListener("change", (event) => {
                 const selectedColor = event.target.value;
+                addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
+                addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
+                addToCartButton.setAttribute("data-item-name", `Trucker Cap | ${selectedColor}`);
 
                 // Alle Slideshows ausblenden
                 slideshows.forEach((slideshow) => {
