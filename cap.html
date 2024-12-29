@@ -243,7 +243,7 @@
 
             // Funktion zum Wechseln der Bilder
             window.changeSlide = (direction) => {
-                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
+                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
                 if (!activeSlideshow) return;
 
                 const slides = activeSlideshow.querySelectorAll("img");
