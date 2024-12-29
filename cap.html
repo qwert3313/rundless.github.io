@@ -237,8 +237,10 @@
             button.style.display = "none";
         });
 
-        // Passenden Button anzeigen
-        const activeButton = document.getElementById(`button-${colorToIdMap[selectedColor]}`);
+        // Button mit passendem data-item-id anzeigen
+        const activeButton = Array.from(buttons).find(
+            (button) => button.getAttribute("data-item-id") === dataItemId
+        );
         if (activeButton) {
             activeButton.style.display = "block";
         }
@@ -249,7 +251,7 @@
         });
 
         // Passende Slideshow anzeigen
-        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        const activeSlideshow = document.getElementById(`slideshow-${colorToIdMap[selectedColor]}`);
         if (activeSlideshow) {
             activeSlideshow.style.display = "block";
             resetSlides(activeSlideshow);
