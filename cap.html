@@ -132,6 +132,7 @@
 
             <p><strong style="font-size: larger;">29€</strong></p>
             <button class="snipcart-add-item"
+            style="display: none;"
             data-item-id="4657791814"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -142,6 +143,7 @@
         </button>
 
         <button class="snipcart-add-item"
+        style="display: none;"
             data-item-id="4657791813"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -152,6 +154,7 @@
         </button>
 
         <button class="snipcart-add-item"
+        style="display: none;"
             data-item-id="4657791815"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -162,6 +165,7 @@
         </button>
 
         <button class="snipcart-add-item"
+        style="display: none;"
             data-item-id="4657791825"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -172,6 +176,7 @@
         </button>
 
         <button class="snipcart-add-item"
+        style="display: none;"
             data-item-id="4657795257"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -182,6 +187,7 @@
         </button>
 
         <button class="snipcart-add-item"
+        style="display: none;"
             data-item-id="4657791820"
             data-item-price="29.00"
             data-item-description="Size-adjustable, air-permeable high-quality cap"
@@ -226,10 +232,16 @@
     colorSelect.addEventListener("change", (event) => {
         const selectedColor = event.target.value;
 
-        // Update Add-to-Cart-Button Attribute
-        addToCartButton.setAttribute("data-item-id", colorToIdMap[selectedColor]);
-        addToCartButton.setAttribute("data-item-image", colorToImageMap[selectedColor]);
-        addToCartButton.setAttribute("data-item-custom1-value", selectedColor);
+        // Alle Buttons ausblenden
+        buttons.forEach((button) => {
+            button.style.display = "none";
+        });
+
+        // Passenden Button anzeigen
+        const activeButton = document.getElementById(`button-${selectedColor}`);
+        if (activeButton) {
+            activeButton.style.display = "block";
+        }
 
         // Alle Slideshows ausblenden
         slideshows.forEach((slideshow) => {
