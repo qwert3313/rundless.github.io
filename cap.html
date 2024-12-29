@@ -267,32 +267,6 @@ colorSelect.addEventListener("change", (event) => {
                 slides[0].classList.add("active"); // Setze erstes Bild aktiv
                 currentSlideIndex = 0;
             }
-
-            // Snipcart Event Listener hinzufügen
-            document.addEventListener("snipcart.ready", () => {
-                Snipcart.events.on("item.added", (item) => {
-                    updateCartItemImage(item);
-                });
-
-                Snipcart.events.on("item.updated", (item) => {
-                    updateCartItemImage(item);
-                });
-            });
-
-            // Update des Warenkorbbildes basierend auf der Farbe
-            function updateCartItemImage(item) {
-                const color = item.customFields?.Color;
-                const newImageUrl = colorToImageMap[color];
-
-                if (newImageUrl) {
-                    const cartItem = document.querySelector(`[data-item-id="${item.id}"]`);
-                    const imageElement = cartItem?.querySelector(".snipcart-item-line__image");
-
-                    if (imageElement) {
-                        imageElement.src = newImageUrl;
-                    }
-                }
-            }
         });
 
     </script>
