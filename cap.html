@@ -222,7 +222,7 @@
 
                 // Button mit passendem data-item-id anzeigen
                 const activeButton = Array.from(buttons).find(
-                    (button) => button.getAttribute("data-item-id") === dataItemId
+                    (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
                 );
                 if (activeButton) {
                     activeButton.style.display = "block";
