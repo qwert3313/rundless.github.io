@@ -430,8 +430,8 @@
                                 resetSlides(activeSlideshow); // Slides zurücksetzen
                             }
                         });
-                        colorSelect.addEventListener("change", (event) => {
-                            sizeSelect = sizeSelect.value;
+                        sizeSelect.addEventListener("change", (event) => {
+                            selectedSize = sizeSelect.value;
 
                             // Alle Buttons ausblenden
                             const buttons = document.querySelectorAll(".snipcart-add-item");
