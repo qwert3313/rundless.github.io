@@ -515,73 +515,77 @@
         </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            const addToCartButton = document.getElementById("orderBtn");
-            const colorSelect = document.getElementById("color-select");
-            const sizeSelect = document.getElementById("size-select");
-            const slideshows = document.querySelectorAll(".slideshow");
-            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
-            let selectedSize = sizeSelect.value;
-            const buttons = document.querySelectorAll(".snipcart-add-item");
+document.addEventListener("DOMContentLoaded", () => {
+    const colorSelect = document.getElementById("color-select");
+    const sizeSelect = document.getElementById("size-select");
+    const slideshows = document.querySelectorAll(".slideshow");
+    const buttons = document.querySelectorAll(".snipcart-add-item");
 
+    const colorToIdMap = {
+        blackS: 4657755189,
+        blackM: 4657755190,
+        blackL: 4657755191,
+        blackXL: 4657755192,
+        carolinaBlueS: 4657755249,
+        carolinaBlueM: 4657755250,
+        carolinaBlueL: 4657755251,
+        carolinaBlueXL: 4657755252,
+        charcoalS: 4657755224,
+        charcoalM: 4657755225,
+        charcoalL: 4657755226,
+        charcoalXL: 4657755227,
+        lightBlueS: 4657755269,
+        lightBlueM: 4657755270,
+        lightBlueL: 4657755271,
+        lightBlueXL: 4657755272,
+        maroonS: 4657755184,
+        maroonM: 4657755185,
+        maroonL: 4657755186,
+        maroonXL: 4657755187,
+        militaryGreenS: 4657755230,
+        militaryGreenM: 4657755231,
+        militaryGreenL: 4657755232,
+        militaryGreenXL: 4657755233,
+        navyS: 4657755194,
+        navyM: 4657755195,
+        navyL: 4657755196,
+        navyXL: 4657755197,
+        sandS: 4657755259,
+        sandM: 4657755260,
+        sandL: 4657755261,
+        sandXL: 4657755262,
+        sportGreyS: 4657755254,
+        sportGreyM: 4657755255,
+        sportGreyL: 4657755256,
+        sportGreyXL: 4657755257,
+        whiteS: 4657755279,
+        whiteM: 4657755280,
+        whiteL: 4657755281,
+        whiteXL: 4657755282,
+    };
 
+    let selectedColor = colorSelect.value;
+    let selectedSize = sizeSelect.value;
+    let currentSlideIndex = 0;
 
-                const colorToIdMap = {
-                    blackS: 4657755189,
-                    blackM: 4657755190,
-                    blackL: 4657755191,
-                    blackXL: 4657755192,
-                    carolinaBlueS: 4657755249,
-                    carolinaBlueM: 4657755250,
-                    carolinaBlueL: 4657755251,
-                    carolinaBlueXL: 4657755252,
-                    charcoalS: 4657755224,
-                    charcoalM: 4657755225,
-                    charcoalL: 4657755226,
-                    charcoalXL: 4657755227,
-                    lightBlueS: 4657755269,
-                    lightBlueM: 4657755270,
-                    lightBlueL: 4657755271,
-                    lightBlueXL: 4657755272,
-                    maroonS: 4657755184,
-                    maroonM: 4657755185,
-                    maroonL: 4657755186,
-                    maroonXL: 4657755187,
-                    militaryGreenS: 4657755230,
-                    militaryGreenM: 4657755231,
-                    militaryGreenL: 4657755232,
-                    militaryGreenXL: 4657755233,
-                    navyS: 4657755194,
-                    navyM: 4657755195,
-                    navyL: 4657755196,
-                    navyXL: 4657755197,
-                    sandS: 4657755259,
-                    sandM: 4657755260,
-                    sandL: 4657755261,
-                    sandXL: 4657755262,
-                    sportGreyS: 4657755254,
-                    sportGreyM: 4657755255,
-                    sportGreyL: 4657755256,
-                    sportGreyXL: 4657755257,
-                    whiteS: 4657755279,
-                    whiteM: 4657755280,
-                    whiteL: 4657755281,
-                    whiteXL: 4657755282,
-                };
-                let currentSlideIndex = 0;
-
-
-    // Standardanzeige
     function initializeButtonsAndSlides() {
+        const idKey = selectedColor + selectedSize;
+        if (!colorToIdMap[idKey]) {
+            console.error("Ungültige Kombination aus Farbe und Größe:", idKey);
+            return;
+        }
+
+        // Buttons anzeigen
+        buttons.forEach((button) => (button.style.display = "none"));
         const activeButton = Array.from(buttons).find(
-            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+            (button) => button.getAttribute("data-item-id") === colorToIdMap[idKey].toString()
         );
-        console.log(selectedColor + selectedSize + "=" + colorToIdMap[selectedColor + selectedSize]);
         if (activeButton) {
             activeButton.style.display = "block";
         }
 
-        slideshows.forEach((slideshow) => slideshow.style.display = "none");
+        // Slideshow anzeigen
+        slideshows.forEach((slideshow) => (slideshow.style.display = "none"));
         const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
         if (activeSlideshow) {
             activeSlideshow.style.display = "block";
@@ -589,38 +593,39 @@
         }
     }
 
-    // Event-Listener
+    function resetSlides(slideshow) {
+        const slides = slideshow.querySelectorAll("img");
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[0]?.classList.add("active");
+        currentSlideIndex = 0;
+    }
+
+    window.changeSlide = (direction) => {
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (!activeSlideshow) return;
+
+        const slides = activeSlideshow.querySelectorAll("img");
+        slides[currentSlideIndex].classList.remove("active");
+
+        currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+        slides[currentSlideIndex].classList.add("active");
+    };
+
+    // Event-Listener für Änderungen
     colorSelect.addEventListener("change", (event) => {
         selectedColor = event.target.value;
-        buttons.forEach((button) => button.style.display = "none");
         initializeButtonsAndSlides();
     });
 
     sizeSelect.addEventListener("change", (event) => {
         selectedSize = event.target.value;
-        buttons.forEach((button) => button.style.display = "none");
         initializeButtonsAndSlides();
     });
 
-    // Zurücksetzen der Slides
-    function resetSlides(slideshow) {
-        const slides = slideshow.querySelectorAll("img");
-        slides.forEach((slide) => slide.classList.remove("active"));
-        slides[0].classList.add("active");
-    }
-                window.changeSlide = (direction) => {
-                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                if (!activeSlideshow) return;
-
-                const slides = activeSlideshow.querySelectorAll("img");
-                slides[currentSlideIndex].classList.remove("active");
-
-                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
-                slides[currentSlideIndex].classList.add("active");
-            };
-
     // Initialisierung beim Laden
     initializeButtonsAndSlides();
+});
+
         </script>
 </body>
 
