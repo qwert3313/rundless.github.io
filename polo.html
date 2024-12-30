@@ -171,8 +171,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const colorSelect = document.getElementById("color-select");
     const sizeSelect = document.getElementById("size-select");
-    const buttons = document.querySelectorAll(".snipcart-add-item");
     const slideshows = document.querySelectorAll(".slideshow");
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+
 
     const colorToIdMap = {
         blackS: 4657825185,
@@ -189,22 +190,28 @@ document.addEventListener("DOMContentLoaded", () => {
         whiteXL: 4657825203,
     };
 
-    let selectedColor = colorSelect.value;
+let selectedColor = colorSelect.value;
     let selectedSize = sizeSelect.value;
-                let currentSlideIndex = 0;
+    let currentSlideIndex = 0;
 
-
-    // Standardanzeige
     function initializeButtonsAndSlides() {
+        const idKey = selectedColor + selectedSize;
+        if (!colorToIdMap[idKey]) {
+            console.error("Ungültige Kombination aus Farbe und Größe:", idKey);
+            return;
+        }
+
+        // Buttons anzeigen
+        buttons.forEach((button) => (button.style.display = "none"));
         const activeButton = Array.from(buttons).find(
-            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+            (button) => button.getAttribute("data-item-id") === colorToIdMap[idKey].toString()
         );
-        console.log(selectedColor + selectedSize + "=" + colorToIdMap[selectedColor + selectedSize]);
         if (activeButton) {
             activeButton.style.display = "block";
         }
 
-        slideshows.forEach((slideshow) => slideshow.style.display = "none");
+        // Slideshow anzeigen
+        slideshows.forEach((slideshow) => (slideshow.style.display = "none"));
         const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
         if (activeSlideshow) {
             activeSlideshow.style.display = "block";
@@ -212,35 +219,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Event-Listener
+    function resetSlides(slideshow) {
+        const slides = slideshow.querySelectorAll("img");
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[0]?.classList.add("active");
+        currentSlideIndex = 0;
+    }
+
+    window.changeSlide = (direction) => {
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (!activeSlideshow) return;
+
+        const slides = activeSlideshow.querySelectorAll("img");
+        slides[currentSlideIndex].classList.remove("active");
+
+        currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+        slides[currentSlideIndex].classList.add("active");
+    };
+
+    // Event-Listener für Änderungen
     colorSelect.addEventListener("change", (event) => {
         selectedColor = event.target.value;
-        buttons.forEach((button) => button.style.display = "none");
         initializeButtonsAndSlides();
     });
 
     sizeSelect.addEventListener("change", (event) => {
         selectedSize = event.target.value;
-        buttons.forEach((button) => button.style.display = "none");
         initializeButtonsAndSlides();
     });
-
-    // Zurücksetzen der Slides
-    function resetSlides(slideshow) {
-        const slides = slideshow.querySelectorAll("img");
-        slides.forEach((slide) => slide.classList.remove("active"));
-        slides[0].classList.add("active");
-    }
-                window.changeSlide = (direction) => {
-                const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
-                if (!activeSlideshow) return;
-
-                const slides = activeSlideshow.querySelectorAll("img");
-                slides[currentSlideIndex].classList.remove("active");
-
-                currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
-                slides[currentSlideIndex].classList.add("active");
-            };
 
     // Initialisierung beim Laden
     initializeButtonsAndSlides();
