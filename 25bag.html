@@ -59,8 +59,19 @@
             <select id="color-select" name="color">
                 <option value="black" selected>Black</option>
                 <option value="oyster">Oyster</option>
-            </select>
+            </select>" method="post">
+            <form action="https://gamebackend-nfw1.onrender.com/check" method="post">
+                <!-- Der View/Hide-Button verwendet type="button", um das Absenden zu verhindern -->
+                <button id="button" type="button" onclick="changeType()" class="button">View</button>
+
+                <!-- Das Eingabefeld für den Code -->
+                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+
+                <!-- Der Submit-Button sendet das Formular an den Server -->
+                <button class="button" type="submit">CHECK CODE AND ADD TO CART</button>
+            </form>
             <p><strong style="font-size: larger;">26$</strong></p>
+
             <button id="orderBtn" style="margin-top: 20px; display: block;" class="snipcart-add-item button"
                 data-item-id="4657823471" data-item-price="26.00"
                 data-item-description="Eco-friendly tote bag, perfect for shopping or casual use."
@@ -96,7 +107,6 @@
                 return;
             }
 
-            console.log("Sende Anfrage an /check1...");
             const response = await fetch("https://gamebackend-nfw1.onrender.com/check", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -122,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 black: 4657823471,
                 oyster: 4657823472,
             };
-            let currentSlideIndex = 0;
+let currentSlideIndex = 0;
 
             // Standard: Schwarzes Produkt anzeigen
             const defaultSlideshow = document.getElementById("slideshow-black");
@@ -131,35 +141,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Event-Listener für Farbauswahl
-            colorSelect.addEventListener("change", (event) => {
-                selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+colorSelect.addEventListener("change", (event) => {
+    selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
-                // Alle Buttons ausblenden
-                const buttons = document.querySelectorAll(".snipcart-add-item");
-                buttons.forEach((button) => {
-                    button.style.display = "none";
-                });
+    // Alle Buttons ausblenden
+    const buttons = document.querySelectorAll(".snipcart-add-item");
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
 
-                // Button mit passendem data-item-id anzeigen
-                const activeButton = Array.from(buttons).find(
-                    (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
-                );
-                if (activeButton) {
-                    activeButton.style.display = "block";
-                }
+    // Button mit passendem data-item-id anzeigen
+    const activeButton = Array.from(buttons).find(
+        (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
+    );
+    if (activeButton) {
+        activeButton.style.display = "block";
+    }
 
-                // Alle Slideshows ausblenden
-                slideshows.forEach((slideshow) => {
-                    slideshow.style.display = "none";
-                });
+    // Alle Slideshows ausblenden
+    slideshows.forEach((slideshow) => {
+        slideshow.style.display = "none";
+    });
 
-                // Passende Slideshow anzeigen
-                const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                if (activeSlideshow) {
-                    activeSlideshow.style.display = "block";
-                    resetSlides(activeSlideshow); // Slides zurücksetzen
-                }
-            });
+    // Passende Slideshow anzeigen
+    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+    if (activeSlideshow) {
+        activeSlideshow.style.display = "block";
+        resetSlides(activeSlideshow); // Slides zurücksetzen
+    }
+});
 
             // Funktion zum Wechseln der Bilder
             window.changeSlide = (direction) => {
@@ -180,6 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 slides[0].classList.add("active"); // Setze erstes Bild aktiv
                 currentSlideIndex = 0;
             }
+        });
+
         });
     </script>
 </body>
