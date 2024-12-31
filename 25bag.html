@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Tote Bag</title>
     <link rel="stylesheet" href="items.css">
+            <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
     <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
-        <div id="snipcart" data-api-key="MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0"></div>
 </head>
 
 <body>
@@ -91,7 +91,6 @@
         </div>
     </div>
     <script>
-        const form = document.getElementById("code-form");
         form.addEventListener("submit", async (event) => {
             event.preventDefault(); // Verhindert Standard-Formularabsendung
 
@@ -128,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const colorSelect = document.getElementById("color-select");
             const slideshows = document.querySelectorAll(".slideshow");
             let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+            const form = document.getElementById("code-form");
             const colorToIdMap = {
                 black: 4657823471,
                 oyster: 4657823472,
