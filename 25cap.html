@@ -137,6 +137,11 @@
                 <option value="white">White</option>
                 <option value="whiteBlack">White/Black</option>
             </select>
+                            <form action="https://gamebackend-nfw1.onrender.com/check" method="post" id="code-form">
+                <button id="button" type="button" onclick="changeType()" class="button">View</button>
+                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+                <button class="button" type="submit">CHECK CODE</button>
+            </form>
 
             <p><strong style="font-size: larger;"><s>29$</s>21.75&</strong></p>
             <button class="snipcart-add-item button"         style="margin-top: 20px; display: block;" 
@@ -197,15 +202,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-                const form = document.getElementById("code-form");
+    const form = document.getElementById("code-form");
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
-    let correctCodeEntered = false;
-            const addToCartButton = document.getElementById("orderBtn");
-            const colorSelect = document.getElementById("color-select");
-            const slideshows = document.querySelectorAll(".slideshow");
-            let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+    let correctCodeEntered = false; // Standardfarbe beim Laden
             const colorToIdMap = {
                 black: 4657791814,
                 blackWhite: 4657791813,
@@ -341,9 +342,6 @@ function changeType() {
         button.textContent = "View";
     }
 }
-
-
-
     </script>
 </body>
 
