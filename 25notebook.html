@@ -118,8 +118,12 @@
                 <option value="turquoise">Turquoise</option>
                 <option value="white">White</option>
             </select>
-
-            <p><strong style="font-size: larger;">22€</strong></p>
+            <form action="https://gamebackend-nfw1.onrender.com/check" method="post" id="code-form">
+                <button id="button" type="button" onclick="changeType()" class="button">View</button>
+                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+                <button class="button" type="submit">CHECK CODE</button>
+            </form>
+            <p><strong style="font-size: larger;"><s>22$</s> 16.50$</strong></p>
 <button id="orderBtn" style="margin-top: 20px; display: block;" class="snipcart-add-item button"
                 data-item-id="4657806574" data-item-price="16.50"
                 data-item-description="Hardcover bound notebook for school, work and more"
