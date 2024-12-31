@@ -164,7 +164,7 @@
     </div>
 
     <script>
- const form = document.getElementById("code-form");
+    const form = document.getElementById("code-form");
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
@@ -176,7 +176,7 @@
                 turquoise: 4657806578,
                 white: 4657806582,
             };
-           let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+let selectedColor = colorSelect.value; // Standardfarbe beim Laden
     let currentSlideIndex = 0;
 
     // Standard: Schwarzes Produkt anzeigen
@@ -287,6 +287,7 @@
         slides[0].classList.add("active"); // Setze erstes Bild aktiv
         currentSlideIndex = 0;
     }
+});
 
 // Funktion zum Ändern des Eingabefeld-Typs
 function changeType() {
