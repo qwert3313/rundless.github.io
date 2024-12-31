@@ -184,11 +184,6 @@
                 <option value="L">L</option>
                 <option value="XL">XL</option>
             </select>
-                        <form action="https://gamebackend-nfw1.onrender.com/check" method="post" id="code-form">
-                <button id="button" type="button" onclick="changeType()" class="button">View</button>
-                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
-                <button class="button" type="submit">CHECK CODE</button>
-            </form>
             <select name="color" id="color-select">
                 <option value="black" selected>Black</option>
                 <option value="white">White</option>
@@ -201,6 +196,11 @@
                 <option value="lightBlue">Light Blue</option>
                 <option value="maroon">Maroon</option>
             </select>
+                                    <form action="https://gamebackend-nfw1.onrender.com/check" method="post" id="code-form">
+                <button id="button" type="button" onclick="changeType()" class="button">View</button>
+                <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
+                <button class="button" type="submit">CHECK CODE</button>
+            </form>
             <p><strong style="font-size: larger;"><s>22$</s>16.50$</strong></p>
             <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755189"
                 data-item-price="16.50"
