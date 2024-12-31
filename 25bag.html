@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
+    const correctCodeEntered = false;
     const colorToIdMap = {
         black: 4657823471,
         oyster: 4657823472,
@@ -175,6 +176,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeButton = Array.from(buttons).find(
             (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
         );
+
+        if (activeButton && correctCodeEntered) {
+                    activeButton.style.display = "block";
+                }
 
         // Alle Slideshows ausblenden
         slideshows.forEach((slideshow) => {
