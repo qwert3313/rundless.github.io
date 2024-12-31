@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
-    const correctCodeEntered = false;
+    let correctCodeEntered = false; // Jetzt `let`, damit der Zustand geändert werden kann
     const colorToIdMap = {
         black: 4657823471,
         oyster: 4657823472,
@@ -144,6 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 console.log("OK von Server");
 
+                // Setze correctCodeEntered auf true
+                correctCodeEntered = true;
+
                 // Aktiviere Button basierend auf der Farbauswahl
                 const activeButton = Array.from(buttons).find(
                     (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
@@ -172,14 +175,14 @@ document.addEventListener("DOMContentLoaded", () => {
             button.style.display = "none";
         });
 
-        // Button mit passendem data-item-id anzeigen
+        // Button mit passendem data-item-id anzeigen, nur wenn Code korrekt eingegeben wurde
         const activeButton = Array.from(buttons).find(
             (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
         );
 
         if (activeButton && correctCodeEntered) {
-                    activeButton.style.display = "block";
-                }
+            activeButton.style.display = "block";
+        }
 
         // Alle Slideshows ausblenden
         slideshows.forEach((slideshow) => {
@@ -229,6 +232,7 @@ function changeType() {
         button.textContent = "View";
     }
 }
+
 
 
     </script>
