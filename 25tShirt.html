@@ -528,10 +528,13 @@
 
         <script>
 document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("code-form");
     const colorSelect = document.getElementById("color-select");
     const sizeSelect = document.getElementById("size-select");
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
+    let correctCodeEntered = false;
+    let activeButton;
 
     const colorToIdMap = {
         blackS: 4657755189,
@@ -734,6 +737,7 @@ function changeType() {
         inputField.type = "password";
         button.textContent = "View";
     }
+}
 }
 
 
