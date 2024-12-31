@@ -124,7 +124,7 @@
                 <button class="button" type="submit">CHECK CODE</button>
             </form>
             <p><strong style="font-size: larger;"><s>22$</s> 16.50$</strong></p>
-<button id="orderBtn" style="margin-top: 20px; display: block;" class="snipcart-add-item button"
+<button id="orderBtn" style="margin-top: 20px; display: none;" class="snipcart-add-item button"
                 data-item-id="4657806574" data-item-price="16.50"
                 data-item-description="Hardcover bound notebook for school, work and more"
                 data-item-image="img/heft/black/hardcover-bound-notebook-black-front-6763c98518c8b.jpg"
@@ -168,6 +168,7 @@
     </div>
 
     <script>
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("code-form");
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
@@ -180,7 +181,7 @@
                 turquoise: 4657806578,
                 white: 4657806582,
             };
-let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+ let selectedColor = colorSelect.value; // Standardfarbe beim Laden
     let currentSlideIndex = 0;
 
     // Standard: Schwarzes Produkt anzeigen
