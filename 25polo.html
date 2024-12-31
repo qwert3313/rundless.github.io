@@ -296,6 +296,35 @@ let selectedSize = sizeSelect.value; // Standardfarbe beim Laden
             resetSlides(activeSlideshow); // Slides zurücksetzen
         }
     });
+        sizeSelect.addEventListener("change", (event) => {
+        selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+
+        // Alle Buttons ausblenden
+        buttons.forEach((button) => {
+            button.style.display = "none";
+        });
+
+        // Button mit passendem data-item-id anzeigen, nur wenn Code korrekt eingegeben wurde
+        const activeButton = Array.from(buttons).find(
+            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+        );
+
+        if (activeButton && correctCodeEntered) {
+            activeButton.style.display = "block";
+        }
+
+        // Alle Slideshows ausblenden
+        slideshows.forEach((slideshow) => {
+            slideshow.style.display = "none";
+        });
+
+        // Passende Slideshow anzeigen
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (activeSlideshow) {
+            activeSlideshow.style.display = "block";
+            resetSlides(activeSlideshow); // Slides zurücksetzen
+        }
+    });
 
     // Funktion zum Wechseln der Bilder
     window.changeSlide = (direction) => {
