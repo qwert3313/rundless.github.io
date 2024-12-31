@@ -142,7 +142,9 @@ let currentSlideIndex = 0;
 
             // Event-Listener für Farbauswahl
 colorSelect.addEventListener("change", (event) => {
-    Snipcart.api.cart.get().then(cart => console.log(cart.token));
+Snipcart.api.cart.get().then(cart => {
+  console.log(cart.token);
+});
     selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
     // Alle Buttons ausblenden
