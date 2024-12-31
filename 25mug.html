@@ -72,11 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("code-form");
     const colorSelect = document.getElementById("color-select");
     const slideshows = document.querySelectorAll(".slideshow");
-    const buttons = document.querySelectorAll(".snipcart-add-item");
-    let correctCodeEntered = false; // Jetzt `let`, damit der Zustand geändert werden kann
-            const colorToIdMap = {
-                black: 4657797417,
-            };
+    const buyButton = document.querySelector(".snipcart-add-item"); // Nur ein Button
+    let correctCodeEntered = false; // Kann geändert werden
+    const colorToIdMap = {
+        black: 4657795253,
+        darkGreen: 4657795255,
+        navy: 4657795254,
+        white: 4657795257,
+        gray: 4657795256,
+    };
 
     let selectedColor = colorSelect.value; // Standardfarbe beim Laden
     let currentSlideIndex = 0;
@@ -87,10 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
         defaultSlideshow.style.display = "block";
     }
 
-    // Standardmäßig alle Buttons deaktivieren
-    buttons.forEach((button) => {
-        button.style.display = "none";
-    });
+    // Kauf-Button standardmäßig deaktivieren
+    buyButton.style.display = "none";
 
     // Formular-Event-Listener
     form.addEventListener("submit", async (event) => {
@@ -120,13 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Setze correctCodeEntered auf true
                 correctCodeEntered = true;
 
-                // Aktiviere Button basierend auf der Farbauswahl
-                       activeButton = document.getElementsByClassName("snipcart-add-item");
-                );
-
-                if (activeButton) {
-                    activeButton.style.display = "block";
-                }
+                // Zeige den Kauf-Button für die ausgewählte Farbe
+                buyButton.style.display = "block";
+                buyButton.setAttribute("data-item-id", colorToIdMap[selectedColor].toString());
 
                 form.style.display = "none"; // Formular ausblenden
             } else {
@@ -142,18 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
     colorSelect.addEventListener("change", (event) => {
         selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
 
-        // Alle Buttons ausblenden
-        buttons.forEach((button) => {
-            button.style.display = "none";
-        });
-
-        // Button mit passendem data-item-id anzeigen, nur wenn Code korrekt eingegeben wurde
-        const activeButton = Array.from(buttons).find(
-            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
-        );
-
-        if (activeButton && correctCodeEntered) {
-            activeButton.style.display = "block";
+        // Kauf-Button aktualisieren
+        if (correctCodeEntered) {
+            buyButton.style.display = "block";
+            buyButton.setAttribute("data-item-id", colorToIdMap[selectedColor].toString());
+        } else {
+            buyButton.style.display = "none";
         }
 
         // Alle Slideshows ausblenden
@@ -204,6 +196,7 @@ function changeType() {
         button.textContent = "View";
     }
 }
+
     </script>
 </body>
 
