@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideshows = document.querySelectorAll(".slideshow");
     const buttons = document.querySelectorAll(".snipcart-add-item");
     let correctCodeEntered = false;
-    const activeButton;
+    let activeButton;
 
 
     const colorToIdMap = {
@@ -300,7 +300,7 @@ let selectedSize = sizeSelect.value; // Standardfarbe beim Laden
 
     
         sizeSelect.addEventListener("change", (event) => {
-        selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+        selectedSize  = event.target.value; // Hier wird selectedColor aktualisiert
 
         // Alle Buttons ausblenden
         buttons.forEach((button) => {
