@@ -181,18 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSlideshow.style.display = "block";
             resetSlides(activeSlideshow); // Slides zurücksetzen
         }
-                function changeType() {
-            var inputField = document.getElementById("inputField");
-            var button = document.getElementById("button");
-            
-            // Ändere den Typ des Eingabefeldes zwischen "password" und "text"
-            if (inputField.type === "password") {
-                inputField.type = "text";
-                button.textContent = "Hide";
-            } else {
-                inputField.type = "password";
-                button.textContent = "View";
-            }
     });
 
     // Funktion zum Wechseln der Bilder
@@ -214,6 +202,18 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[0].classList.add("active"); // Setze erstes Bild aktiv
         currentSlideIndex = 0;
     }
+                    function changeType() {
+            var inputField = document.getElementById("inputField");
+            var button = document.getElementById("button");
+            
+            // Ändere den Typ des Eingabefeldes zwischen "password" und "text"
+            if (inputField.type === "password") {
+                inputField.type = "text";
+                button.textContent = "Hide";
+            } else {
+                inputField.type = "password";
+                button.textContent = "View";
+            }
 });
 
     </script>
