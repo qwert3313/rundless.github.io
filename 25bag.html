@@ -176,10 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
             (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor].toString()
         );
 
-        if (activeButton) {
-            activeButton.style.display = "block";
-        }
-
         // Alle Slideshows ausblenden
         slideshows.forEach((slideshow) => {
             slideshow.style.display = "none";
