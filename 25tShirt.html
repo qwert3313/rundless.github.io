@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unisex classic T-Shirt</title>
     <link rel="stylesheet" href="items.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+    <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </head>
 
 <body>
+            <script>
+        window.SnipcartSettings = {
+            publicApiKey: "MjhjYTAzOTktMTgwNC00ZDdhLWJmNmYtOGRjOWVmMDAwNTE2NjM4NzAwNDk3MDU3MzI5MzE0",
+            loadStrategy: "on-user-interaction",
+        };
+
+        (function () { var c, d; (d = (c = window.SnipcartSettings).version) != null || (c.version = "3.0"); var s, S; (S = (s = window.SnipcartSettings).timeoutDuration) != null || (s.timeoutDuration = 2750); var l, p; (p = (l = window.SnipcartSettings).domain) != null || (l.domain = "cdn.snipcart.com"); var w, u; (u = (w = window.SnipcartSettings).protocol) != null || (w.protocol = "https"); var m, g; (g = (m = window.SnipcartSettings).loadCSS) != null || (m.loadCSS = !0); var y = window.SnipcartSettings.version.includes("v3.0.0-ci") || window.SnipcartSettings.version != "3.0" && window.SnipcartSettings.version.localeCompare("3.4.0", void 0, { numeric: !0, sensitivity: "base" }) === -1, f = ["focus", "mouseover", "touchmove", "scroll", "keydown"]; window.LoadSnipcart = o; document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", r) : r(); function r() { window.SnipcartSettings.loadStrategy ? window.SnipcartSettings.loadStrategy === "on-user-interaction" && (f.forEach(function (t) { return document.addEventListener(t, o) }), setTimeout(o, window.SnipcartSettings.timeoutDuration)) : o() } var a = !1; function o() { if (a) return; a = !0; let t = document.getElementsByTagName("head")[0], n = document.querySelector("#snipcart"), i = document.querySelector('src[src^="'.concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, '"][src$="snipcart.js"]')), e = document.querySelector('link[href^="'.concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, '"][href$="snipcart.css"]')); n || (n = document.createElement("div"), n.id = "snipcart", n.setAttribute("hidden", "true"), document.body.appendChild(n)), h(n), i || (i = document.createElement("script"), i.src = "".concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, "/themes/v").concat(window.SnipcartSettings.version, "/default/snipcart.js"), i.async = !0, t.appendChild(i)), !e && window.SnipcartSettings.loadCSS && (e = document.createElement("link"), e.rel = "stylesheet", e.type = "text/css", e.href = "".concat(window.SnipcartSettings.protocol, "://").concat(window.SnipcartSettings.domain, "/themes/v").concat(window.SnipcartSettings.version, "/default/snipcart.css"), t.prepend(e)), f.forEach(function (v) { return document.removeEventListener(v, o) }) } function h(t) { !y || (t.dataset.apiKey = window.SnipcartSettings.publicApiKey, window.SnipcartSettings.addProductBehavior && (t.dataset.configAddProductBehavior = window.SnipcartSettings.addProductBehavior), window.SnipcartSettings.modalStyle && (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle), window.SnipcartSettings.currency && (t.dataset.currency = window.SnipcartSettings.currency), window.SnipcartSettings.templatesUrl && (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl)) } })();
+    </script>
+    <button class="snipcart-checkout"
+        style="background-color: transparent; border: none; position: absolute; top: 20px; right: 50px; width: 5%; height: 5%; cursor: pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M351.9 329.506H206.81l-3.072-12.56H368.16l26.63-116.019-217.23-26.04-9.952-58.09h-50.4v21.946h31.894l35.233 191.246a32.927 32.927 0 1 0 36.363 21.462h100.244a32.825 32.825 0 1 0 30.957-21.945zM181.427 197.45l186.51 22.358-17.258 75.195H198.917z"
+                data-name="Shopping Cart" />
+        </svg>
+        <nobr><span class="snipcart-total-price"></span>
+            (<span class="snipcart-items-count"></span>)
+    </button></nobr>
     <div class="container">
         <!-- Linke Spalte: Slideshow -->
         <div class="image-container">
@@ -46,10 +66,11 @@
                 <img src="img/tShirt/maroon/unisex-classic-tee-maroon-left-6762e8bc28244.jpg" alt="Maroon Product 3">
                 <img src="img/tShirt/maroon/unisex-classic-tee-maroon-right-front-6762ee6bcc785.jpg"
                     alt="Maroon Product 4">
-                    <div class="controls">
-                        <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
-                        <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                    </div>               </div>
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
 
             <div class="slideshow" id="slideshow-navy" style="display: none;">
                 <img src="img/tShirt/navy/unisex-classic-tee-navy-front-6762e8bc2b4ad.jpg" alt="Navy Product 1"
@@ -60,7 +81,8 @@
                 <div class="controls">
                     <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
                     <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                </div>               </div>
+                </div>
+            </div>
 
             <div class="slideshow" id="slideshow-charcoal" style="display: none;">
                 <img src="img/tShirt/darkgray/unisex-classic-tee-charcoal-front-6762e8bc2fba4.jpg"
@@ -71,10 +93,11 @@
                     alt="Charcoal Product 3">
                 <img src="img/tShirt/darkgray/unisex-classic-tee-charcoal-right-front-6762ee6bcfa87.jpg"
                     alt="Charcoal Product 4">
-                    <div class="controls">
-                        <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
-                        <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                    </div>               </div>
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
 
             <div class="slideshow" id="slideshow-militaryGreen" style="display: none;">
                 <img src="img/tShirt/green/unisex-classic-tee-military-green-front-6762e8bc36d95.jpg"
@@ -85,10 +108,11 @@
                     alt="Military Green Product 3">
                 <img src="img/tShirt/green/unisex-classic-tee-military-green-right-front-6762ee6bd2760.jpg"
                     alt="Military Green Product 4">
-                    <div class="controls">
-                        <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
-                        <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                    </div>               </div>
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
 
             <div class="slideshow" id="slideshow-carolinaBlue" style="display: none;">
                 <img src="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-front-6762e8bc3e7cf.jpg"
@@ -99,12 +123,13 @@
                     alt="Carolina Blue Product 3">
                 <img src="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-right-front-6762ee6bd57dc.jpg"
                     alt="Carolina Blue Product 4">
-                    <div class="controls">
-                        <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
-                        <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                    </div>               </div>
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
 
-            <div class="slideshow" id="slideshow-sportGray" style="display: none;">
+            <div class="slideshow" id="slideshow-sportGrey" style="display: none;">
                 <img src="img/tShirt/lightgray/unisex-classic-tee-sport-grey-front-6762e8bc47e6e.jpg"
                     alt="Sport Gray Product 1" class="active">
                 <img src="img/tShirt/lightgray/unisex-classic-tee-sport-grey-back-6762e8bc4c10a.jpg"
@@ -113,10 +138,11 @@
                     alt="Sport Gray Product 3">
                 <img src="img/tShirt/lightgray/unisex-classic-tee-sport-grey-right-front-6762ee6bd9164.jpg"
                     alt="Sport Gray Product 4">
-                    <div class="controls">
-                        <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
-                        <button class="next" onclick="changeSlide(1)">Next ❯</button>
-                    </div>               </div>
+                <div class="controls">
+                    <button class="prev" onclick="changeSlide(-1)">❮ Previous</button>
+                    <button class="next" onclick="changeSlide(1)">Next ❯</button>
+                </div>
+            </div>
 
             <div class="slideshow" id="slideshow-sand" style="display: none;">
                 <img src="img/tShirt/sand/unisex-classic-tee-sand-front-6762e8bc57011.jpg" alt="Sand Product 1"
@@ -146,100 +172,566 @@
             </div>
         </div>
 
-            <!-- Rechte Spalte: Inhalt -->
-            <div class="content-container">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
-                    distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
-                    porro
-                    assumenda velit ullam.</p>
-                <select name="size" id="size-select">
-                    <option value="#" disabled selected>Size</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-                <select name="color" id="color-select">
-                    <option value="black" selected>Black</option>
-                    <option value="white">White</option>
-                    <option value="navy">Navy</option>
-                    <option value="charcoal">Charcoal</option>
-                    <option value="militaryGreen">Military Green</option>
-                    <option value="carolinaBlue">Carolina Blue</option>
-                    <option value="sportGray">Sport Gray</option>
-                    <option value="sand">Sand</option>
-                    <option value="lightBlue">Light Blue</option>
-                    <option value="maroon">Maroon</option>
-                </select>
-                <p><strong style="font-size: larger;"><s>22€ </s>16,50€</strong></p>
-                <form action="http://localhost:3000/check1" method="post">
-                    <!-- Der View/Hide-Button verwendet type="button", um das Absenden zu verhindern -->
-                    <button id="button" type="button" onclick="changeType()" class="button">View</button>
-                    
-                    <!-- Das Eingabefeld für den Code -->
-                    <input type="password" id="inputField" name="code" placeholder="Enter your Code" required>
-                    
-                    <!-- Der Submit-Button sendet das Formular an den Server -->
-                    <button class="button" type="submit">CHECK CODE AND ADD TO CART</button>
-                </form>            </div>
+        <!-- Rechte Spalte: Inhalt -->
+        <div class="content-container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium earum doloribus possimus in qui
+                distinctio accusantium, tempore sunt sed consequatur molestias cupiditate illo sequi commodi numquam
+                porro
+                assumenda velit ullam.</p>
+            <select name="size" id="size-select">
+                <option selected value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <select name="color" id="color-select">
+                <option value="black" selected>Black</option>
+                <option value="white">White</option>
+                <option value="navy">Navy</option>
+                <option value="charcoal">Charcoal</option>
+                <option value="militaryGreen">Military Green</option>
+                <option value="carolinaBlue">Carolina Blue</option>
+                <option value="sportGrey">Sport Grey</option>
+                <option value="sand">Sand</option>
+                <option value="lightBlue">Light Blue</option>
+                <option value="maroon">Maroon</option>
+            </select>
+            <p><strong style="font-size: larger;">22€</strong></p>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755189"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/black/unisex-classic-tee-black-front-6762e8bc287ca.jpg"
+                data-item-name="Unisex classic t-shirt | Black | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755190"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/black/unisex-classic-tee-black-front-6762e8bc287ca.jpg"
+                data-item-name="Unisex classic t-shirt | Black | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755191"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/black/unisex-classic-tee-black-front-6762e8bc287ca.jpg"
+                data-item-name="Unisex classic t-shirt | Black | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755192"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/black/unisex-classic-tee-black-front-6762e8bc287ca.jpg"
+                data-item-name="Unisex classic t-shirt | Black | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755249"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-front-6762e8bc3e7cf.jpg"
+                data-item-name="Unisex classic t-shirt | Carolina Blue | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755250"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-front-6762e8bc3e7cf.jpg"
+                data-item-name="Unisex classic t-shirt | Carolina Blue | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755251"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-front-6762e8bc3e7cf.jpg"
+                data-item-name="Unisex classic t-shirt | Carolina Blue | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755252"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkblue/unisex-classic-tee-carolina-blue-front-6762e8bc3e7cf.jpg"
+                data-item-name="Unisex classic t-shirt | Carolina Blue | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755224"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkgray/unisex-classic-tee-charcoal-front-6762e8bc2fba4.jpg"
+                data-item-name="Unisex classic t-shirt | Charcoal  | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755225"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkgray/unisex-classic-tee-charcoal-front-6762e8bc2fba4.jpg"
+                data-item-name="Unisex classic t-shirt | Charcoal | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755226"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkgray/unisex-classic-tee-charcoal-front-6762e8bc2fba4.jpg"
+                data-item-name="Unisex classic t-shirt | Charcoal  | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755227"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/darkgray/unisex-classic-tee-charcoal-front-6762e8bc2fba4.jpg"
+                data-item-name="Unisex classic t-shirt | Charcoal  | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755269"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightblue/unisex-classic-tee-light-blue-front-6762e8bc6638f.jpg"
+                data-item-name="Unisex classic t-shirt | Light Blue | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755270"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightblue/unisex-classic-tee-light-blue-front-6762e8bc6638f.jpg"
+                data-item-name="Unisex classic t-shirt | Light Blue | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755271"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightblue/unisex-classic-tee-light-blue-front-6762e8bc6638f.jpg"
+                data-item-name="Unisex classic t-shirt | Light Blue | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755272"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightblue/unisex-classic-tee-light-blue-front-6762e8bc6638f.jpg"
+                data-item-name="Unisex classic t-shirt | Light Blue | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755184"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/maroon/unisex-classic-tee-maroon-front-6762e8bc271c6.jpg"
+                data-item-name="Unisex classic t-shirt | Maroon | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755185"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/maroon/unisex-classic-tee-maroon-front-6762e8bc271c6.jpg"
+                data-item-name="Unisex classic t-shirt | Maroon | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755186"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/maroon/unisex-classic-tee-maroon-front-6762e8bc271c6.jpg"
+                data-item-name="Unisex classic t-shirt | Maroon | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755187"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/maroon/unisex-classic-tee-maroon-front-6762e8bc271c6.jpg"
+                data-item-name="Unisex classic t-shirt | Maroon | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755230"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/green/unisex-classic-tee-military-green-front-6762e8bc36d95.jpg"
+                data-item-name="Unisex classic t-shirt | Military Green | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755231"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/green/unisex-classic-tee-military-green-front-6762e8bc36d95.jpg"
+                data-item-name="Unisex classic t-shirt | Military Green | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755232"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/green/unisex-classic-tee-military-green-front-6762e8bc36d95.jpg"
+                data-item-name="Unisex classic t-shirt | Military Green | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755233"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/green/unisex-classic-tee-military-green-front-6762e8bc36d95.jpg"
+                data-item-name="Unisex classic t-shirt | Military Green | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755194"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/navy/unisex-classic-tee-navy-front-6762e8bc2b4ad.jpg"
+                data-item-name="Unisex classic t-shirt | Navy | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755195"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/navy/unisex-classic-tee-navy-front-6762e8bc2b4ad.jpg"
+                data-item-name="Unisex classic t-shirt | Navy  | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755196"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/navy/unisex-classic-tee-navy-front-6762e8bc2b4ad.jpg"
+                data-item-name="Unisex classic t-shirt | Navy | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755197"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/navy/unisex-classic-tee-navy-front-6762e8bc2b4ad.jpg"
+                data-item-name="Unisex classic t-shirt | Navy | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755259"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/sand/unisex-classic-tee-sand-front-6762e8bc57011.jpg"
+                data-item-name="Unisex classic t-shirt | Sand | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755260"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/sand/unisex-classic-tee-sand-front-6762e8bc57011.jpg"
+                data-item-name="Unisex classic t-shirt | Sand | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755261"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/sand/unisex-classic-tee-sand-front-6762e8bc57011.jpg"
+                data-item-name="Unisex classic t-shirt | Sand | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755262"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/sand/unisex-classic-tee-sand-front-6762e8bc57011.jpg"
+                data-item-name="Unisex classic t-shirt | Sand | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755254"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightgray/unisex-classic-tee-sport-grey-front-6762e8bc47e6e.jpg"
+                data-item-name="Unisex classic t-shirt | Sport Grey | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755255"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightgray/unisex-classic-tee-sport-grey-front-6762e8bc47e6e.jpg"
+                data-item-name="Unisex classic t-shirt | Sport Grey | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755256"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightgray/unisex-classic-tee-sport-grey-front-6762e8bc47e6e.jpg"
+                data-item-name="Unisex classic t-shirt | Sport Grey | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755257"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/lightgray/unisex-classic-tee-sport-grey-front-6762e8bc47e6e.jpg"
+                data-item-name="Unisex classic t-shirt | Sport Grey | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755279"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/white/unisex-classic-tee-white-front-6762e8bc747a7.jpg"
+                data-item-name="Unisex classic t-shirt | White | S"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;" data-item-id="4657755280"
+                data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/white/unisex-classic-tee-white-front-6762e8bc747a7.jpg"
+                data-item-name="Unisex classic t-shirt | White | M"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;"
+                data-item-id="4657755281" data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/white/unisex-classic-tee-white-front-6762e8bc747a7.jpg"
+                data-item-name="Unisex classic t-shirt | White | L"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+            <button class="snipcart-add-item button" style="margin-top: 20px; display: none;"
+                data-item-id="4657755282" data-item-price="16.50"
+                data-item-description="A comfortable, classic T-shirt made from high-quality cotton"
+                data-item-image="img/tShirt/white/unisex-classic-tee-white-front-6762e8bc747a7.jpg"
+                data-item-name="Unisex classic t-shirt | White | XL"
+                data-item-url="https://qwert3313.github.io/rundless.github.io/25tShirt.html">
+                ADD TO CART
+            </button>
+
+
+        </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const colorSelect = document.getElementById("color-select");
-                const slideshows = document.querySelectorAll(".slideshow");
-                let currentSlideIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const colorSelect = document.getElementById("color-select");
+    const sizeSelect = document.getElementById("size-select");
+    const slideshows = document.querySelectorAll(".slideshow");
+    const buttons = document.querySelectorAll(".snipcart-add-item");
 
-                // Standard: Schwarzes T-Shirt anzeigen
-                const defaultSlideshow = document.getElementById("slideshow-black");
-                defaultSlideshow.style.display = "block";
+    const colorToIdMap = {
+        blackS: 4657755189,
+        blackM: 4657755190,
+        blackL: 4657755191,
+        blackXL: 4657755192,
+        carolinaBlueS: 4657755249,
+        carolinaBlueM: 4657755250,
+        carolinaBlueL: 4657755251,
+        carolinaBlueXL: 4657755252,
+        charcoalS: 4657755224,
+        charcoalM: 4657755225,
+        charcoalL: 4657755226,
+        charcoalXL: 4657755227,
+        lightBlueS: 4657755269,
+        lightBlueM: 4657755270,
+        lightBlueL: 4657755271,
+        lightBlueXL: 4657755272,
+        maroonS: 4657755184,
+        maroonM: 4657755185,
+        maroonL: 4657755186,
+        maroonXL: 4657755187,
+        militaryGreenS: 4657755230,
+        militaryGreenM: 4657755231,
+        militaryGreenL: 4657755232,
+        militaryGreenXL: 4657755233,
+        navyS: 4657755194,
+        navyM: 4657755195,
+        navyL: 4657755196,
+        navyXL: 4657755197,
+        sandS: 4657755259,
+        sandM: 4657755260,
+        sandL: 4657755261,
+        sandXL: 4657755262,
+        sportGreyS: 4657755254,
+        sportGreyM: 4657755255,
+        sportGreyL: 4657755256,
+        sportGreyXL: 4657755257,
+        whiteS: 4657755279,
+        whiteM: 4657755280,
+        whiteL: 4657755281,
+        whiteXL: 4657755282,
+    };
 
-                colorSelect.addEventListener("change", (event) => {
-                    const selectedColor = event.target.value;
+let selectedColor = colorSelect.value; // Standardfarbe beim Laden
+let selectedSize = sizeSelect.value; // Standardfarbe beim Laden
+    let currentSlideIndex = 0;
 
-                    // Alle Slideshows ausblenden
-                    slideshows.forEach((slideshow) => {
-                        slideshow.style.display = "none";
-                    });
+    // Standard: Schwarzes Produkt anzeigen
+    const defaultSlideshow = document.getElementById("slideshow-black");
+    if (defaultSlideshow) {
+        defaultSlideshow.style.display = "block";
+    }
 
-                    // Passende Slideshow anzeigen
-                    const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
-                    if (activeSlideshow) {
-                        activeSlideshow.style.display = "block";
-                        resetSlides(activeSlideshow);
-                    }
-                });
+    // Standardmäßig alle Buttons deaktivieren
+    buttons.forEach((button) => {
+        button.style.display = "none";
+    });
 
-                window.changeSlide = (direction) => {
-                    const activeSlideshow = document.querySelector(".slideshow[style='display: block;']");
-                    if (!activeSlideshow) return;
+    // Formular-Event-Listener
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault(); // Verhindert Standard-Formularabsendung
 
-                    const slides = activeSlideshow.querySelectorAll("img");
-                    slides[currentSlideIndex].classList.remove("active");
+        const code = document.getElementById("inputField").value.trim();
+        let lastChar = code[code.length - 1];
 
-                    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
-                    slides[currentSlideIndex].classList.add("active");
-                };
-
-                function resetSlides(slideshow) {
-                    const slides = slideshow.querySelectorAll("img");
-                    slides.forEach((slide) => slide.classList.remove("active"));
-                    slides[0].classList.add("active"); // Setze erstes Bild aktiv
-                    currentSlideIndex = 0;
-                }
-            });
-            function changeType() {
-            var inputField = document.getElementById("inputField");
-            var button = document.getElementById("button");
-            
-            // Ändere den Typ des Eingabefeldes zwischen "password" und "text"
-            if (inputField.type === "password") {
-                inputField.type = "text";
-                button.textContent = "Hide";
-            } else {
-                inputField.type = "password";
-                button.textContent = "View";
-            }
+        if (!code) {
+            alert("Bitte geben Sie einen gültigen Code ein.");
+            return;
+        } else if (lastChar != 1) {
+            alert("The last digit of the code has to be 1.");
+            return;
         }
+
+        try {
+            const response = await fetch("https://gamebackend-nfw1.onrender.com/check", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ code }),
+            });
+
+            if (response.ok) {
+                console.log("OK von Server");
+
+                // Setze correctCodeEntered auf true
+                correctCodeEntered = true;
+
+                // Aktiviere Button basierend auf der Farbauswahl
+                const activeButton = Array.from(buttons).find(
+                    (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+                );
+
+                if (activeButton) {
+                    activeButton.style.display = "block";
+                }
+
+                form.style.display = "none"; // Formular ausblenden
+            } else {
+                alert("Code could not be found on server.");
+            }
+        } catch (error) {
+            console.error("Fehler beim Server-Aufruf:", error);
+            alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
+        }
+    });
+
+    // Event-Listener für Farbauswahl
+    colorSelect.addEventListener("change", (event) => {
+        selectedColor = event.target.value; // Hier wird selectedColor aktualisiert
+
+        // Alle Buttons ausblenden
+        buttons.forEach((button) => {
+            button.style.display = "none";
+        });
+
+        // Button mit passendem data-item-id anzeigen, nur wenn Code korrekt eingegeben wurde
+        activeButton = Array.from(buttons).find(
+            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+        );
+
+        if (activeButton && correctCodeEntered) {
+            activeButton.style.display = "block";
+        }
+
+        // Alle Slideshows ausblenden
+        slideshows.forEach((slideshow) => {
+            slideshow.style.display = "none";
+        });
+
+        // Passende Slideshow anzeigen
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (activeSlideshow) {
+            activeSlideshow.style.display = "block";
+            resetSlides(activeSlideshow); // Slides zurücksetzen
+        }
+    });
+
+    
+        sizeSelect.addEventListener("change", (event) => {
+        selectedSize  = event.target.value; // Hier wird selectedColor aktualisiert
+
+        // Alle Buttons ausblenden
+        buttons.forEach((button) => {
+            button.style.display = "none";
+        });
+
+        // Button mit passendem data-item-id anzeigen, nur wenn Code korrekt eingegeben wurde
+         activeButton = Array.from(buttons).find(
+            (button) => button.getAttribute("data-item-id") === colorToIdMap[selectedColor + selectedSize].toString()
+        );
+
+        if (activeButton && correctCodeEntered) {
+            activeButton.style.display = "block";
+        }
+
+        // Alle Slideshows ausblenden
+        slideshows.forEach((slideshow) => {
+            slideshow.style.display = "none";
+        });
+
+        // Passende Slideshow anzeigen
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (activeSlideshow) {
+            activeSlideshow.style.display = "block";
+            resetSlides(activeSlideshow); // Slides zurücksetzen
+        }
+    });
+
+    // Funktion zum Wechseln der Bilder
+    window.changeSlide = (direction) => {
+        const activeSlideshow = document.getElementById(`slideshow-${selectedColor}`);
+        if (!activeSlideshow) return;
+
+        const slides = activeSlideshow.querySelectorAll("img");
+        slides[currentSlideIndex].classList.remove("active");
+
+        currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+        slides[currentSlideIndex].classList.add("active");
+    };
+
+    // Zurücksetzen der Slides
+    function resetSlides(slideshow) {
+        const slides = slideshow.querySelectorAll("img");
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[0].classList.add("active"); // Setze erstes Bild aktiv
+        currentSlideIndex = 0;
+    }
+});
+
+// Funktion zum Ändern des Eingabefeld-Typs
+function changeType() {
+    var inputField = document.getElementById("inputField");
+    var button = document.getElementById("button");
+
+    // Ändere den Typ des Eingabefeldes zwischen "password" und "text"
+    if (inputField.type === "password") {
+        inputField.type = "text";
+        button.textContent = "Hide";
+    } else {
+        inputField.type = "password";
+        button.textContent = "View";
+    }
+}
+
+
         </script>
 </body>
 
